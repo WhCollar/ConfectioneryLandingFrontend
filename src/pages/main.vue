@@ -1,10 +1,18 @@
 <script setup lang="ts">
-import { Divider } from 'shared/ui/divider';
+import { Section } from 'entities/structure';
 </script>
 
 <template>
-  <div class="font-montserrat">Main page</div>
-  <div class="font-greatVibes">Main page</div>
-  <div class="font-cormorant">Main page</div>
-  <Divider />
+  <Section
+    :introduction-props="{
+      titleLabel: 'we know that',
+      title: 'Main page',
+      text:
+        'Lorem ipsum dolor sit amet, ea has tollit nominavi, ei ius choro\n' +
+        '          affert graeco. Vim nulla epicuri defini bas et, eam in facer errem\n' +
+        '          nominavi.',
+    }"
+  >
+    <template #content> some content </template>
+  </Section>
 </template>

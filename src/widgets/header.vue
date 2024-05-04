@@ -23,6 +23,7 @@ const headerConfig = [
 
 <template>
   <header>
+    header
     <HeaderMenu />
   </header>
 </template>

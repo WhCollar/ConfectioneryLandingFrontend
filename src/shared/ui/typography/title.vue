@@ -10,24 +10,44 @@ const props = withDefaults(
   },
 );
 
-const tag = computed(() => {
+const info = computed(() => {
+  let tag;
+  let classes;
+
   switch (props.level) {
     case 2:
-      return 'h2';
+      tag = 'h2';
+      classes =
+        'sm:text-[47px] lg:text-[56px] text-[32px] uppercase font-semibold';
+      break;
     case 3:
-      return 'h3';
+      tag = 'h3';
+      classes = '';
+      break;
     case 4:
-      return 'h4';
+      tag = 'h4';
+      classes = '';
+      break;
     case 5:
-      return 'h5';
+      tag = 'h5';
+      classes = 'uppercase font-semibold';
+      break;
     default:
-      return 'h1';
+      tag = 'h1';
+      classes = '';
+      break;
   }
+
+  return { tag, classes };
 });
 </script>
 
 <template>
-  <component :is="tag" class="font-montserrat text-black">
+  <component
+    :is="info.tag"
+    class="font-montserrat text-black"
+    :class="info.classes"
+  >
     <slot />
   </component>
 </template>
