@@ -1,3 +1,5 @@
+declare module '*.png';
+
 /* eslint-disable */
 declare module '*.vue' {
   import type { DefineComponent } from 'vue'

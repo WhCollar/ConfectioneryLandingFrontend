@@ -11,6 +11,8 @@
     "@tanstack/vue-query": "^4.36.2",
     "@vee-validate/yup": "^4.12.4",
     "axios": "1.6.0",
+    "pinia": "^2.1.7",
+    "pinia-plugin-persistedstate": "^3.2.1",
     "vee-validate": "^4.12.4",
     "vite": "5.1.4",
     "vue": "^3.2.13",

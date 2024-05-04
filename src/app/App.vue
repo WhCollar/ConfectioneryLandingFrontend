@@ -1,5 +1,12 @@
+<script setup lang="ts">
+import Footer from 'widgets/footer.vue';
+import Header from 'widgets/header.vue';
+</script>
+
 <template>
+  <Header />
   <RouterView />
+  <Footer />
 </template>
 
 <style>
