@@ -1,0 +1,26 @@
+services:
+  certbot:
+    image: certbot/certbot
+    container_name: certbot
+    env_file:
+      - .env.certbot
+    depends_on:
+      - frontend
+    volumes:
+      - ./data/certbot/conf:/etc/letsencrypt
+      - ./data/certbot/www:/var/www/certbot
+    command: certonly --webroot --webroot-path=/var/www/certbot --email ${EMAIL} --agree-tos --no-eff-email -d ${DOMAIN_NAME}
+
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: frontend
+    volumes:
+      - ./nginx:/etc/nginx/conf.d
+      - ./data/certbot/conf:/etc/letsencrypt
+      - ./data/certbot/www:/var/www/certbot
+    ports:
+      - 80:80
+      - 443:443
+    restart: always
