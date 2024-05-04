@@ -1,29 +1,54 @@
 <script setup lang="ts">
-import { HeaderMenu } from 'features/header.menu';
+import { HeaderMenu, MenuItem } from 'features/header.menu';
+import { RouterEnum } from 'shared/model/router';
+import { TypographyTitle } from 'shared/ui/typography';
+import { Container } from 'shared/ui/utils';
 
-const headerConfig = [
+const headerConfig: MenuItem[] = [
   {
     text: 'Главная',
-    routerName: '',
+    routeName: RouterEnum.Main,
   },
   {
-    text: '',
-    routerName: '',
+    text: 'Портфолио',
+    routeName: RouterEnum.Portfolio,
   },
   {
-    text: '',
-    routerName: '',
+    text: 'Каталог',
+    routeName: RouterEnum.Catalog,
   },
   {
-    text: '',
-    routerName: '',
+    text: 'Связяться с нами',
+    routeName: RouterEnum.ContactUs,
   },
 ];
 </script>
 
 <template>
-  <header>
-    header
-    <HeaderMenu />
+  <header class="relative inline-block align-middle w-full">
+    <div class="hidden lg:block w-full px-[90px]">
+      <div class="relative h-[130px] align-baseline">
+        <div class="float-left h-full flex items-center">
+          <a class="relative inline-block align-top">
+            <TypographyTitle> LOGO </TypographyTitle>
+          </a>
+        </div>
+        <div class="float-right h-full align-baseline">
+          <HeaderMenu :items="headerConfig" />
+        </div>
+      </div>
+    </div>
+    <Container class="lg:hidden max-md:px-10">
+      <div class="relative h-[130px] align-baseline">
+        <div class="float-left h-full flex items-center">
+          <a class="relative inline-block align-top">
+            <TypographyTitle> LOGO </TypographyTitle>
+          </a>
+        </div>
+        <div class="float-right h-full align-baseline">
+          <HeaderMenu :items="headerConfig" />
+        </div>
+      </div>
+    </Container>
   </header>
 </template>

@@ -3,7 +3,7 @@ import { computed } from 'vue';
 
 const props = withDefaults(
   defineProps<{
-    level: 1 | 2 | 3 | 4 | 5;
+    level?: 1 | 2 | 3 | 4 | 5;
   }>(),
   {
     level: 1,

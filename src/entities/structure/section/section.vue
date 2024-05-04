@@ -12,7 +12,10 @@ defineProps<{
   <section class="pt-[145px] pb-[112px]">
     <Container>
       <template v-if="introductionProps">
-        <Introduction v-bind="introductionProps" />
+        <Introduction
+          v-bind="introductionProps"
+          class="md:px-[5%] lg:px-[19%]"
+        />
         <div class="w-full h-[20px]"></div>
       </template>
       <slot name="content" />

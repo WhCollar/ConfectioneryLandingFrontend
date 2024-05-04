@@ -17,7 +17,7 @@ import { TypographyLink } from 'shared/ui/typography';
   >
     <template #content>
       <TypographyLink>Home</TypographyLink>
-      <div class="w-full flex justify-between">
+      <div class="w-full flex-col justify-between">
         <GhostButton>Shop now</GhostButton>
         <PrimaryButton>Discover</PrimaryButton>
         <SecondaryButton>Submit</SecondaryButton>

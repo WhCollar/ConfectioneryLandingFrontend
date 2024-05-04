@@ -11,8 +11,8 @@ defineProps<IntroductionProps>();
 </script>
 
 <template>
-  <div class="text-center">
-    <div class="w-full md:px-[5%] lg:px-[19%]">
+  <div class="w-full text-center">
+    <div class="w-full">
       <template v-if="titleLabel">
         <TypographyTitleLabel>{{ titleLabel }}</TypographyTitleLabel>
       </template>

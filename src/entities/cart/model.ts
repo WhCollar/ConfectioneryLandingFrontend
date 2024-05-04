@@ -6,7 +6,7 @@ type CartItemInfo = { count: number };
 export const useCartStore = defineStore('cart', () => {
   const cart = ref(new Map());
 
-  const size = computed(() => cart.value.size);
+  const count = computed(() => cart.value.size);
 
   function changeCount() {}
 
@@ -15,7 +15,7 @@ export const useCartStore = defineStore('cart', () => {
   function remove() {}
 
   return {
-    size,
+    count,
     add,
     remove,
     changeCount,

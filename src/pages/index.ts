@@ -19,6 +19,11 @@ export const routes: Array<RouteRecordRaw> = [
     component: () => import('./catalog.vue'),
   },
   {
+    path: '/portfolio',
+    name: RouterEnum.Portfolio,
+    component: () => import('./portfolio.vue'),
+  },
+  {
     path: '/cart',
     name: RouterEnum.Cart,
     component: () => import('./cart.vue'),
