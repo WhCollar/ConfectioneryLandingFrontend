@@ -1,5 +1,7 @@
 <script setup lang="ts">
 import { Section } from 'entities/structure';
+import { GhostButton, PrimaryButton, SecondaryButton } from 'shared/ui/buttons';
+import { TypographyLink } from 'shared/ui/typography';
 </script>
 
 <template>
@@ -13,6 +15,13 @@ import { Section } from 'entities/structure';
         '          nominavi.',
     }"
   >
-    <template #content> some content </template>
+    <template #content>
+      <TypographyLink>Home</TypographyLink>
+      <div class="w-full flex justify-between">
+        <GhostButton>Shop now</GhostButton>
+        <PrimaryButton>Discover</PrimaryButton>
+        <SecondaryButton>Submit</SecondaryButton>
+      </div>
+    </template>
   </Section>
 </template>
