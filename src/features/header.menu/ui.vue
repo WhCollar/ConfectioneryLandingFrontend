@@ -4,7 +4,16 @@ import { useRoute, useRouter } from 'vue-router';
 import { HeaderCart } from 'entities/cart';
 import { Introduction } from 'entities/structure';
 import { Drawer } from 'shared/ui/drawer';
-import { SearchIcon, MenuIcon } from 'shared/ui/icons';
+import {
+  SearchIcon,
+  MenuIcon,
+  Linkedin,
+  Instagram,
+  SocialLinksGroup,
+  Facebook,
+  Pinterest,
+  Twitter,
+} from 'shared/ui/icons';
 import { TypographyLink } from 'shared/ui/typography';
 import { MenuItem } from './model';
 
@@ -65,12 +74,21 @@ watch(
       <Drawer v-model:show="desktopDrawer">
         <template #content>
           <div class="h-full flex items-center justify-center">
-            <Introduction
-              title-label=" Masterpiece of "
-              title=" tres doux "
-              text="There are many variations of passages of Lorem. Ipsum available, but the majority. "
-            />
-            <div class="h-[20px]"></div>
+            <div>
+              <Introduction
+                title-label=" Masterpiece of "
+                title=" tres doux "
+                text="There are many variations of passages of Lorem. Ipsum available, but the majority. "
+              />
+              <div class="h-[20px]"></div>
+              <SocialLinksGroup>
+                <Facebook class="mr-[24px]" />
+                <Twitter class="mr-[24px]" />
+                <Instagram class="mr-[24px]" />
+                <Linkedin class="mr-[24px]" />
+                <Pinterest />
+              </SocialLinksGroup>
+            </div>
           </div>
         </template>
       </Drawer>

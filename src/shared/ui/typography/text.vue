@@ -3,7 +3,7 @@ import { computed } from 'vue';
 
 const props = withDefaults(
   defineProps<{
-    type: 'primary' | 'regular';
+    type: 'primary' | 'regular' | 'link';
   }>(),
   {
     type: 'regular',
@@ -15,6 +15,11 @@ const info = computed(() => {
   let classes;
 
   switch (props.type) {
+    case 'link':
+      tag = 'a';
+      classes =
+        'text-[24px] leading-[1.42em] tracking-normal normal-case transition duration-[.2s] hover:text-primary';
+      break;
     case 'primary':
       tag = 'h6';
       classes = 'text-[24px] leading-[1.42em] tracking-normal normal-case';

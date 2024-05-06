@@ -32,11 +32,4 @@ import { TypographyLink } from 'shared/ui/typography';
       </div>
     </template>
   </Section>
-  <SocialLinksGroup>
-    <Facebook class="mr-[24px]" />
-    <Twitter class="mr-[24px]" />
-    <Instagram class="mr-[24px]" />
-    <Linkedin class="mr-[24px]" />
-    <Pinterest />
-  </SocialLinksGroup>
 </template>
