@@ -1,3 +1,4 @@
+import * as path from 'path';
 import vue from '@vitejs/plugin-vue';
 import { defineConfig } from 'vite';
 import EnvironmentPlugin from 'vite-plugin-environment';
@@ -10,7 +11,11 @@ export default defineConfig({
     tsconfigPaths(),
     EnvironmentPlugin('all', { prefix: 'VITE_' }),
   ],
-
+  resolve: {
+    alias: {
+      '@': path.resolve(__dirname, 'src'),
+    },
+  },
   server: {
     port: 8000,
   },

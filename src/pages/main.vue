@@ -1,6 +1,14 @@
 <script setup lang="ts">
 import { Section } from 'entities/structure';
 import { GhostButton, PrimaryButton, SecondaryButton } from 'shared/ui/buttons';
+import {
+  Facebook,
+  Twitter,
+  Instagram,
+  Linkedin,
+  Pinterest,
+  SocialLinksGroup,
+} from 'shared/ui/icons';
 import { TypographyLink } from 'shared/ui/typography';
 </script>
 
@@ -24,4 +32,11 @@ import { TypographyLink } from 'shared/ui/typography';
       </div>
     </template>
   </Section>
+  <SocialLinksGroup>
+    <Facebook class="mr-[24px]" />
+    <Twitter class="mr-[24px]" />
+    <Instagram class="mr-[24px]" />
+    <Linkedin class="mr-[24px]" />
+    <Pinterest />
+  </SocialLinksGroup>
 </template>

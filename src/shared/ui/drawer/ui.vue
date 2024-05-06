@@ -14,7 +14,6 @@ const isHolderShow = ref(props.show);
 
 watchEffect(() => {
   if (!props.show) {
-    console.log(props.show);
     setTimeout(() => {
       isHolderShow.value = props.show;
     }, 600);

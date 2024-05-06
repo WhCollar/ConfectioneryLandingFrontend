@@ -1,3 +1,7 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { SocialLinkHolder } from './social.link.holder';
+</script>
 
-<template></template>
+<template>
+  <SocialLinkHolder icon-class="social_twitter" />
+</template>

@@ -3,5 +3,5 @@ import { SocialLinkHolder } from './social.link.holder';
 </script>
 
 <template>
-  <SocialLinkHolder icon-class="social_facebook" />
+  <SocialLinkHolder icon-class="social_pinterest" />
 </template>
