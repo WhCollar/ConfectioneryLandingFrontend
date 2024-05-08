@@ -25,7 +25,7 @@ const headerConfig: MenuItem[] = [
 </script>
 
 <template>
-  <header class="relative inline-block align-middle w-full">
+  <header class="relative inline-block align-middle w-full z-[110]">
     <div class="hidden lg:block w-full px-[90px]">
       <div class="relative h-[130px] align-baseline">
         <div class="float-left h-full flex items-center">

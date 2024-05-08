@@ -16,7 +16,8 @@
     "vee-validate": "^4.12.4",
     "vite": "5.1.4",
     "vue": "^3.2.13",
-    "vue-router": "^4.0.3"
+    "vue-router": "^4.0.3",
+    "vue3-carousel": "^0.3.3"
   },
   "devDependencies": {
     "@feature-sliced/eslint-config": "^0.1.0-beta.6",
