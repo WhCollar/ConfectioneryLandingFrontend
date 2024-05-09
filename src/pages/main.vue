@@ -1,8 +1,15 @@
 <script setup lang="ts">
 import { MainCarousel } from 'widgets/main.carousel';
-import { ProductCategorySlice } from 'widgets/product.cutegory.slice';
+import { MenuSection } from 'widgets/menu.section';
+import { ProductCategorySlice } from 'widgets/product.category.slice';
 import { SectionWithIntroduction } from 'entities/structure';
-import { H1Img1, H1Parallax_1_1, H1Parallax_2_1 } from 'shared/ui/images';
+import {
+  H1Img1,
+  H1Parallax_1_1,
+  H1Parallax_2_1,
+  H1Parallax_4,
+} from 'shared/ui/images';
+import { Parallax } from 'shared/ui/parallax';
 import { TypographyTitleLabel } from 'shared/ui/typography';
 </script>
 
@@ -28,17 +35,14 @@ import { TypographyTitleLabel } from 'shared/ui/typography';
       </template>
     </SectionWithIntroduction>
     <section class="w-full">
-      <div
-        class="bg-[50%_0px] max-2xl:bg-cover bg-fixed bg-no-repeat"
-        :style="{ backgroundImage: `url('${H1Parallax_2_1}')` }"
-      >
+      <Parallax :imageUrl="H1Parallax_2_1">
         <div class="py-[156px] text-center">
           <TypographyTitleLabel class="text-[90px] leading-[100px]">
             If there's no chocolate in Heaven, <br />
             I'm not going.
           </TypographyTitleLabel>
         </div>
-      </div>
+      </Parallax>
     </section>
     <SectionWithIntroduction
       :introduction-props="{
@@ -50,6 +54,54 @@ import { TypographyTitleLabel } from 'shared/ui/typography';
       <template #content>
         <ProductCategorySlice />
       </template>
+    </SectionWithIntroduction>
+    <SectionWithIntroduction
+      :introduction-props="{
+        titleLabel: 'enjoy each bite ',
+        title: 'OUR PRICES',
+        text: 'Lorem ipsum dolor sit amet, ea has tollit nominavi, ei ius choro affert graeco. Vim nulla epicuri defini bas et, eam in facer errem nominavi.',
+      }"
+    >
+      <template #content> some content </template>
+    </SectionWithIntroduction>
+    <section class="w-full">
+      <div>
+        <MenuSection
+          :image-url="H1Parallax_4"
+          title="A TRUE DELIGHT"
+          :menu-items="[
+            {
+              title: 'COCONUT TRUFFLE',
+              composition: 'Cream, cockies, biscuites, hazelnut',
+              price: 9,
+            },
+            {
+              title: 'ALMOND CUBE',
+              composition: 'Almond, cockies, biscuites, cream',
+              price: 12,
+            },
+            {
+              title: 'WHISKEY CREAM CAKE',
+              composition: 'Whiskey, cream, cockies, biscuites',
+              price: 26,
+            },
+            {
+              title: 'CRÈME BRÛLÉE',
+              composition: 'Caramel, cream, cockies, almond',
+              price: 11,
+            },
+          ]"
+        />
+      </div>
+    </section>
+    <SectionWithIntroduction
+      :introduction-props="{
+        titleLabel: 'enjoy each bite ',
+        title: 'OUR PRICES',
+        text: 'Lorem ipsum dolor sit amet, ea has tollit nominavi, ei ius choro affert graeco. Vim nulla epicuri defini bas et, eam in facer errem nominavi.',
+      }"
+    >
+      <template #content> some content </template>
     </SectionWithIntroduction>
   </div>
 </template>

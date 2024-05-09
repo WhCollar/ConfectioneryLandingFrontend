@@ -22,7 +22,8 @@ const info = computed(() => {
       break;
     case 3:
       tag = 'h3';
-      classes = '';
+      classes =
+        'text-[40px] font-semibold uppercase leading-[1.1em] tracking-[.08em]';
       break;
     case 4:
       tag = 'h4';
