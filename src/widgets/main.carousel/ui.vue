@@ -38,7 +38,7 @@ const sliderItems: CarouselProduct[] = [
 </script>
 
 <template>
-  <Carousel class="pb-[70px]" wrap-around>
+  <Carousel class="pb-[50px]" wrap-around>
     <Slide v-for="(slide, index) in sliderItems" :key="index">
       <div
         class="h-[100vh] w-[100vw] bg-left-top bg-no-repeat bg-cover"
@@ -52,10 +52,13 @@ const sliderItems: CarouselProduct[] = [
                 :title-label="slide.titleLabel"
                 :title="slide.title"
                 :text="slide.text"
+                :text-class="'hidden lg:block'"
               />
               <div class="h-[20px]"></div>
-              <div class="flex justify-center items-center">
-                <PrimaryButton class="mr-[20px]">Discover</PrimaryButton>
+              <div class="flex max-lg:flex-col justify-center items-center">
+                <PrimaryButton class="max-lg:mb-[20px] lg:mr-[20px]">
+                  Discover
+                </PrimaryButton>
                 <GhostButton>Shop now</GhostButton>
               </div>
             </div>

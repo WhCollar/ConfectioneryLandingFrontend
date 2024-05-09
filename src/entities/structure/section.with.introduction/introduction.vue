@@ -21,7 +21,7 @@ defineProps<IntroductionProps>();
       </template>
       <template v-if="text">
         <Divider />
-        <TypographyText type="primary">
+        <TypographyText type="primary" :class="textClass">
           {{ text }}
         </TypographyText>
       </template>
