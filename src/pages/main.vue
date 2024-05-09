@@ -28,7 +28,7 @@ import { TypographyTitleLabel } from 'shared/ui/typography';
     </SectionWithIntroduction>
     <section class="w-full">
       <div
-        class="bg-[50%_297px] bg-fixed bg-no-repeat"
+        class="bg-[50%_0px] max-2xl:bg-cover bg-fixed bg-no-repeat"
         :style="{ backgroundImage: `url('${H1Parallax_2_1}')` }"
       >
         <div class="py-[156px] text-center">
@@ -39,5 +39,16 @@ import { TypographyTitleLabel } from 'shared/ui/typography';
         </div>
       </div>
     </section>
+    <SectionWithIntroduction
+      :introduction-props="{
+        titleLabel: ' we know that ',
+        title: ' truffle is art ',
+        text: 'Lorem ipsum dolor sit amet, ea has tollit nominavi, ei ius choro affert graeco. Vim nulla epicuri defini bas et, eam in facer errem nominavi. ',
+      }"
+    >
+      <template #content>
+        <div class="w-full flex justify-center"></div>
+      </template>
+    </SectionWithIntroduction>
   </div>
 </template>
