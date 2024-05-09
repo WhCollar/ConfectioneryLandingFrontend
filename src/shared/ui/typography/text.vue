@@ -3,7 +3,7 @@ import { computed } from 'vue';
 
 const props = withDefaults(
   defineProps<{
-    type: 'primary' | 'regular' | 'link';
+    type?: 'primary' | 'regular' | 'link';
   }>(),
   {
     type: 'regular',

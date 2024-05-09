@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { MainCarousel } from 'widgets/main.carousel';
+import { ProductCategorySlice } from 'widgets/product.cutegory.slice';
 import { SectionWithIntroduction } from 'entities/structure';
 import { H1Img1, H1Parallax_1_1, H1Parallax_2_1 } from 'shared/ui/images';
 import { TypographyTitleLabel } from 'shared/ui/typography';
@@ -47,7 +48,7 @@ import { TypographyTitleLabel } from 'shared/ui/typography';
       }"
     >
       <template #content>
-        <div class="w-full flex justify-center"></div>
+        <ProductCategorySlice />
       </template>
     </SectionWithIntroduction>
   </div>

@@ -8,6 +8,8 @@ export const useCartStore = defineStore('cart', () => {
 
   const count = computed(() => cart.value.size);
 
+  function isAlreadyAddedToCart(id: number) {}
+
   function changeCount() {}
 
   function add() {}
@@ -16,6 +18,7 @@ export const useCartStore = defineStore('cart', () => {
 
   return {
     count,
+    isAlreadyAddedToCart,
     add,
     remove,
     changeCount,

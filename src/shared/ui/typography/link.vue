@@ -2,6 +2,7 @@
 defineProps<{
   href?: string;
   active?: boolean;
+  hideUnderline?: boolean;
 }>();
 </script>
 
@@ -14,7 +15,10 @@ defineProps<{
     <span class="relative block">
       <span
         class="relative align-top inline-block after:content-[''] after:bottom-[1px] after:block after:absolute after:translate-x-[-50%] after:left-[50%] after:w-[20px] after:h-[1px] after:bg-current after:opacity-0 after:transition-opacity after:hover:opacity-100"
-        :class="{ ['after:opacity-100']: active }"
+        :class="{
+          ['after:opacity-100']: active && !hideUnderline,
+          ['after:hover:opacity-0']: hideUnderline,
+        }"
       >
         <slot />
       </span>

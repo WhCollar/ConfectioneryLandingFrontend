@@ -8,6 +8,8 @@ import H1Slide4 from './h1-slide-4.jpg';
 import H1Slide from './h1-slide.png';
 import ShokuninWorldMap from './shokunin.world.map.png';
 
+export * from './truffles';
+
 export {
   H1Img1,
   H1Parallax_2_1,
