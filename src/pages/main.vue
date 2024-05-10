@@ -2,12 +2,14 @@
 import { MainCarousel } from 'widgets/main.carousel';
 import { MenuSection } from 'widgets/menu.section';
 import { ProductCategorySlice } from 'widgets/product.category.slice';
+import { ProductSetPrices } from 'widgets/product.set.prices';
 import { SectionWithIntroduction } from 'entities/structure';
 import {
   H1Img1,
   H1Parallax_1_1,
   H1Parallax_2_1,
   H1Parallax_4,
+  H1Parallax_3,
 } from 'shared/ui/images';
 import { Parallax } from 'shared/ui/parallax';
 import { TypographyTitleLabel } from 'shared/ui/typography';
@@ -56,13 +58,16 @@ import { TypographyTitleLabel } from 'shared/ui/typography';
       </template>
     </SectionWithIntroduction>
     <SectionWithIntroduction
+      :style="{ backgroundImage: `url('${H1Parallax_3}')` }"
       :introduction-props="{
         titleLabel: 'enjoy each bite ',
         title: 'OUR PRICES',
         text: 'Lorem ipsum dolor sit amet, ea has tollit nominavi, ei ius choro affert graeco. Vim nulla epicuri defini bas et, eam in facer errem nominavi.',
       }"
     >
-      <template #content> some content </template>
+      <template #content>
+        <ProductSetPrices />
+      </template>
     </SectionWithIntroduction>
     <section class="w-full">
       <div>
@@ -96,12 +101,12 @@ import { TypographyTitleLabel } from 'shared/ui/typography';
     </section>
     <SectionWithIntroduction
       :introduction-props="{
-        titleLabel: 'enjoy each bite ',
-        title: 'OUR PRICES',
+        titleLabel: 'come or leave a note',
+        title: 'WE ARE SOCIAL',
         text: 'Lorem ipsum dolor sit amet, ea has tollit nominavi, ei ius choro affert graeco. Vim nulla epicuri defini bas et, eam in facer errem nominavi.',
       }"
     >
-      <template #content> some content </template>
+      <template #content> Request form </template>
     </SectionWithIntroduction>
   </div>
 </template>
