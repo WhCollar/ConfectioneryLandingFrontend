@@ -3,6 +3,7 @@ import { MainCarousel } from 'widgets/main.carousel';
 import { MenuSection } from 'widgets/menu.section';
 import { ProductCategorySlice } from 'widgets/product.category.slice';
 import { ProductSetPrices } from 'widgets/product.set.prices';
+import { RequestFrom } from 'features/request.form';
 import { SectionWithIntroduction } from 'entities/structure';
 import {
   H1Img1,
@@ -10,6 +11,7 @@ import {
   H1Parallax_2_1,
   H1Parallax_4,
   H1Parallax_3,
+  H1Parallax_6_1,
 } from 'shared/ui/images';
 import { Parallax } from 'shared/ui/parallax';
 import { TypographyTitleLabel } from 'shared/ui/typography';
@@ -100,13 +102,18 @@ import { TypographyTitleLabel } from 'shared/ui/typography';
       </div>
     </section>
     <SectionWithIntroduction
+      :style="{ backgroundImage: `url('${H1Parallax_6_1}')` }"
       :introduction-props="{
         titleLabel: 'come or leave a note',
         title: 'WE ARE SOCIAL',
         text: 'Lorem ipsum dolor sit amet, ea has tollit nominavi, ei ius choro affert graeco. Vim nulla epicuri defini bas et, eam in facer errem nominavi.',
       }"
     >
-      <template #content> Request form </template>
+      <template #content>
+        <div class="w-full px-[30px]">
+          <RequestFrom />
+        </div>
+      </template>
     </SectionWithIntroduction>
   </div>
 </template>

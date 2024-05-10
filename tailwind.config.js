@@ -21,6 +21,7 @@ module.exports = {
         gray: '#c8c8c8',
         'product-card-hover-placeholder': 'rgba(255, 255, 255, 0.9)',
         'cyan-bluish-gray': '#abb8c3',
+        error: '#dc3232',
         'pale-pink': '#f78da7',
         'vivid-red': '#cf2e2e',
         'luminous-vivid-orange': '#ff6900',
