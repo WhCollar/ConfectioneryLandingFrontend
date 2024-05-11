@@ -24,10 +24,7 @@ const itemsComputed = computed(() => {
 </script>
 
 <template>
-  <div
-    class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[5px]"
-    @click="() => console.log(itemsComputed)"
-  >
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[5px]">
     <template v-if="loading">
       <div class="grid gap-8" v-for="i in 4" :key="i">
         <div class="animate-pulse" v-for="j in 2" :key="j">
