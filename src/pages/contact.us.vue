@@ -81,31 +81,31 @@ const workSchedule: { weekDay: string; timespan: string }[] = [
               ocurreret per. Euripidis pertinacia ullamcorper ne ius, has tale.
             </TypographyText>
           </div>
-          <div class="grid grid-cols-2 text-primary text-[26px]">
-            <div>
-              <span>
+          <div class="grid grid-cols-1 lg:grid-cols-2 text-primary text-[26px]">
+            <div class="max-lg:mb-[15px]">
+              <span class="flex items-center">
                 <span class="icon_house mr-[5px]"></span>
                 <TypographyText type="link">
                   Friedrichstrase 123, 10117 Berlin
                 </TypographyText>
               </span>
             </div>
-            <div>
-              <span>
+            <div class="max-lg:mb-[15px]">
+              <span class="flex items-center">
                 <span class="icon_mail mr-[5px]"></span>
                 <TypographyText type="link">
                   dolcino@qodeinteractive.com
                 </TypographyText>
               </span>
             </div>
-            <div>
-              <span>
+            <div class="max-lg:mb-[15px]">
+              <span class="flex items-center">
                 <span class="icon_phone mr-[5px]"></span>
                 <TypographyText type="link"> 99411 - 7253931 </TypographyText>
               </span>
             </div>
-            <div>
-              <span>
+            <div class="max-lg:mb-[15px]">
+              <span class="flex items-center">
                 <span class="icon_laptop mr-[5px]"></span>
                 <TypographyText type="link">
                   dolcino@qodeinteractive.com
