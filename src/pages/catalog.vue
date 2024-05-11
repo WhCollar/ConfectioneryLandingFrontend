@@ -51,15 +51,15 @@ const products: ProductCardProps[] = [
       <TypographyText> Найдено: {{ products.length }} </TypographyText>
     </div>
     <div class="w-full lg:flex">
+      <div class="w-full lg:w-[25%] px-[15px]">
+        <CatalogFilter />
+      </div>
       <div class="w-full lg:w-[75%] px-[15px] mb-[30px] lg:mb-0">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-[20px]">
           <template v-for="(product, index) in products" :key="index">
             <ProductCard v-bind="product" />
           </template>
         </div>
-      </div>
-      <div class="w-full lg:w-[25%] px-[15px]">
-        <CatalogFilter />
       </div>
     </div>
   </Container>

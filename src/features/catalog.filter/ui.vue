@@ -42,12 +42,12 @@ const priceSliderValue = computed({
 });
 
 const onClickCategory = (category: string) => {
-  if (selectedFilterProperties.value.categories.includes(category)) {
-    const categoryIndex =
-      selectedFilterProperties.value.categories.indexOf(category);
-    selectedFilterProperties.value.categories.splice(categoryIndex, 1);
+  const selectedCategories = selectedFilterProperties.value.categories;
+  if (selectedCategories.includes(category)) {
+    const categoryIndex = selectedCategories.indexOf(category);
+    selectedCategories.splice(categoryIndex, 1);
   } else {
-    selectedFilterProperties.value.categories.push(category);
+    selectedCategories.push(category);
   }
 };
 </script>
