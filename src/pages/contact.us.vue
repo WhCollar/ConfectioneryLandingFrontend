@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { ShotTitle } from '@/shared/ui/images';
-import { TextDelimiterDots } from '@/shared/ui/text.delimiter.dots';
 import { Divider } from 'shared/ui/divider';
+import { ShotTitle } from 'shared/ui/images';
+import { TextDelimiterDots } from 'shared/ui/text.delimiter.dots';
 import { TypographyTitle, TypographyText } from 'shared/ui/typography';
 import { Container } from 'shared/ui/utils';
 
