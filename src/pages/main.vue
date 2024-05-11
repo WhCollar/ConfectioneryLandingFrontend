@@ -12,7 +12,15 @@ import {
   H1Parallax_4,
   H1Parallax_3,
   H1Parallax_6_1,
+  Port1_1,
+  Port1_2,
+  Port1_3,
+  Port1_4,
+  Port1_5,
+  Port1_6,
+  Port1_7,
 } from 'shared/ui/images';
+import { MasonryGrid } from 'shared/ui/masonry.grid';
 import { Parallax } from 'shared/ui/parallax';
 import { TypographyTitleLabel } from 'shared/ui/typography';
 </script>
@@ -59,18 +67,6 @@ import { TypographyTitleLabel } from 'shared/ui/typography';
         <ProductCategorySlice />
       </template>
     </SectionWithIntroduction>
-    <SectionWithIntroduction
-      :style="{ backgroundImage: `url('${H1Parallax_3}')` }"
-      :introduction-props="{
-        titleLabel: 'enjoy each bite ',
-        title: 'OUR PRICES',
-        text: 'Lorem ipsum dolor sit amet, ea has tollit nominavi, ei ius choro affert graeco. Vim nulla epicuri defini bas et, eam in facer errem nominavi.',
-      }"
-    >
-      <template #content>
-        <ProductSetPrices />
-      </template>
-    </SectionWithIntroduction>
     <section class="w-full">
       <div>
         <MenuSection
@@ -101,6 +97,64 @@ import { TypographyTitleLabel } from 'shared/ui/typography';
         />
       </div>
     </section>
+    <SectionWithIntroduction
+      :style="{ backgroundImage: `url('${H1Parallax_3}')` }"
+      :introduction-props="{
+        titleLabel: 'enjoy each bite ',
+        title: 'OUR PRICES',
+        text: 'Lorem ipsum dolor sit amet, ea has tollit nominavi, ei ius choro affert graeco. Vim nulla epicuri defini bas et, eam in facer errem nominavi.',
+      }"
+    >
+      <template #content>
+        <ProductSetPrices />
+      </template>
+    </SectionWithIntroduction>
+    <MasonryGrid
+      :items="[
+        {
+          id: 0,
+          imgUrl: Port1_1,
+          title: 'Cream tart',
+          description: 'Wedding Cakes',
+        },
+        {
+          id: 1,
+          imgUrl: Port1_2,
+          title: 'Fruit cakes',
+          description: 'Wedding Cakes',
+        },
+        {
+          id: 3,
+          imgUrl: Port1_4,
+          title: 'Berry Pie',
+          description: 'Wedding Cakes',
+        },
+        {
+          id: 2,
+          imgUrl: Port1_3,
+          title: 'Pear Cake',
+          description: 'Wedding Cakes',
+        },
+        {
+          id: 4,
+          imgUrl: Port1_5,
+          title: 'Tiramisu',
+          description: 'Wedding Cakes',
+        },
+        {
+          id: 5,
+          imgUrl: Port1_6,
+          title: 'Peach Pie',
+          description: 'Wedding Cakes',
+        },
+        {
+          id: 6,
+          imgUrl: Port1_7,
+          title: 'Choco Roll',
+          description: 'Wedding Cakes',
+        },
+      ]"
+    />
     <SectionWithIntroduction
       :style="{ backgroundImage: `url('${H1Parallax_6_1}')` }"
       :introduction-props="{

@@ -12,6 +12,7 @@ import H1Slide from './h1-slide.png';
 import ShokuninWorldMap from './shokunin.world.map.png';
 
 export * from './truffles';
+export * from './masonry.grid';
 
 export {
   H1Img1,

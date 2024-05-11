@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { toTypedSchema } from '@vee-validate/yup';
-import { useForm } from 'vee-validate';
+import { Form, useForm } from 'vee-validate';
 import { object, string } from 'yup';
 import { SecondaryButton } from 'shared/ui/buttons';
 import { PhoneInput, TextInput, TextAreaInput } from 'shared/ui/inputs';
