@@ -1,8 +1,11 @@
 <script setup lang="ts">
+import { useRouter } from 'vue-router';
 import { HeaderMenu, MenuItem } from 'features/header.menu';
 import { RouterEnum } from 'shared/model/router';
 import { TypographyTitle } from 'shared/ui/typography';
 import { Container } from 'shared/ui/utils';
+
+const router = useRouter();
 
 const headerConfig: MenuItem[] = [
   {
@@ -29,7 +32,10 @@ const headerConfig: MenuItem[] = [
     <div class="hidden lg:block w-full px-[90px]">
       <div class="relative h-[130px] align-baseline">
         <div class="float-left h-full flex items-center">
-          <a class="relative inline-block align-top">
+          <a
+            class="relative inline-block align-top"
+            @click="router.push({ name: RouterEnum.Main })"
+          >
             <TypographyTitle> LOGO </TypographyTitle>
           </a>
         </div>
