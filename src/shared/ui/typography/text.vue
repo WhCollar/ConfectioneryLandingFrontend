@@ -18,7 +18,7 @@ const info = computed(() => {
     case 'link':
       tag = 'a';
       classes =
-        'text-[24px] leading-[1.42em] tracking-normal normal-case transition duration-[.2s] hover:text-primary';
+        'text-[24px] leading-[1.42em] tracking-normal normal-case transition duration-[.2s] hover:text-primary cursor-pointer';
       break;
     case 'primary':
       tag = 'h6';

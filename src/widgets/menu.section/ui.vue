@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { Divider } from 'shared/ui/divider';
 import { Parallax } from 'shared/ui/parallax';
+import { TextDelimiterDots } from 'shared/ui/text.delimiter.dots';
 import { TypographyText, TypographyTitle } from 'shared/ui/typography';
 import { Container } from 'shared/ui/utils';
 
@@ -27,9 +28,7 @@ defineProps<{
                     {{ menuItem.composition }}
                   </TypographyText>
                 </div>
-                <div
-                  class="line table-cell w-[98%] whitespace-nowrap bg-[50%_70%] h-[3px] bg-[length:6px_2px] bg-repeat-x"
-                ></div>
+                <TextDelimiterDots class="w-[98%]" />
                 <div class="table-cell w-[1%] whitespace-nowrap">
                   ₽{{ menuItem.price }}
                 </div>
@@ -41,13 +40,3 @@ defineProps<{
     </Container>
   </Parallax>
 </template>
-
-<style scoped>
-.line {
-  background-image: radial-gradient(
-    circle closest-side,
-    #000 99%,
-    rgba(0, 0, 0, 0) 100%
-  );
-}
-</style>
