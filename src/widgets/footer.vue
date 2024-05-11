@@ -90,7 +90,9 @@ const mapPointLink = '';
             <SocialLinksGroup>
               <Facebook class="mr-[24px]" />
               <Twitter class="mr-[24px]" />
-              <Instagram class="mr-[24px]" />
+              <Instagram />
+            </SocialLinksGroup>
+            <SocialLinksGroup>
               <Linkedin class="mr-[24px]" />
               <Pinterest />
             </SocialLinksGroup>

@@ -1,5 +1,5 @@
 <template>
-  <div class="text-center align-baseline">
+  <div class="text-center">
     <slot />
   </div>
 </template>
