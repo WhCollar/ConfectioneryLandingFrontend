@@ -12,8 +12,8 @@ const isAddedToCart = computed(() => cartStore.isAlreadyAddedToCart(props.id));
 
 <template>
   <div class="text-center">
-    <div class="relative">
-      <img :src="imgUrl" :alt="title" />
+    <div class="relative mb-[20px]">
+      <img class="w-full" :src="imgUrl" :alt="title" />
       <div
         class="absolute top-0 left-0 z-[150] w-full h-full bg-product-card-hover-placeholder opacity-0 transition-opacity duration-[.2s] ease-out hover:opacity-100"
       >
@@ -28,9 +28,9 @@ const isAddedToCart = computed(() => cartStore.isAlreadyAddedToCart(props.id));
       </div>
     </div>
     <div>
-      <TypographyLink class="font-semibold text-[18px]" hide-underline>{{
-        title
-      }}</TypographyLink>
+      <TypographyLink class="font-semibold text-[18px]" hide-underline>
+        {{ title }}
+      </TypographyLink>
     </div>
     <div>
       <TypographyText class="text-[24px] leading-[1.4em]">

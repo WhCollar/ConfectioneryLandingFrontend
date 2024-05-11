@@ -13,6 +13,7 @@ import ShokuninWorldMap from './shokunin.world.map.png';
 
 export * from './truffles';
 export * from './masonry.grid';
+export * from './catalog';
 
 export {
   H1Img1,

@@ -18,7 +18,7 @@ const info = computed(() => {
     case 2:
       tag = 'h2';
       classes =
-        'sm:text-[47px] lg:text-[56px] text-[32px] uppercase font-semibold';
+        'sm:text-[47px] lg:text-[56px] text-[32px] uppercase font-semibold tracking-[.12em]';
       break;
     case 3:
       tag = 'h3';
@@ -31,7 +31,8 @@ const info = computed(() => {
       break;
     case 5:
       tag = 'h5';
-      classes = 'uppercase font-semibold';
+      classes =
+        'uppercase font-semibold leading-[1.33em] text-[18px] tracking-[.06em]';
       break;
     default:
       tag = 'h1';
