@@ -77,7 +77,7 @@ export const useProductGet = (ProductId: RefValueUndefined<string>) =>
     queryFn: () =>
       axiosInstance.get<ProductsResponse>(`catalog/product/${ProductId.value}`),
     enabled: () => !!ProductId.value,
-    select: ({ data }) => setProductResponseMediaUrl(data),
+    select: ({ data }) => setProductResponseMediaUrl(data) as ProductsResponse,
   });
 
 // Comment feature

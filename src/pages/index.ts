@@ -31,7 +31,7 @@ export const routes: Array<RouteRecordRaw> = [
   {
     path: '/product/:id',
     name: RouterEnum.Product,
-    component: () => import('././product.vue'),
+    component: () => import('./product.vue'),
   },
 ];
 

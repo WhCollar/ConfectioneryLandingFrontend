@@ -3,7 +3,7 @@ import { computed } from 'vue';
 
 const props = withDefaults(
   defineProps<{
-    level?: 1 | 2 | 3 | 4 | 5;
+    level?: 1 | 2 | 3 | 4 | 5 | 6;
   }>(),
   {
     level: 1,
@@ -33,6 +33,11 @@ const info = computed(() => {
       tag = 'h5';
       classes =
         'uppercase font-semibold leading-[1.33em] text-[18px] tracking-[.06em]';
+      break;
+    case 6:
+      tag = 'h6';
+      classes =
+        'uppercase font-medium leading-[1.33em] text-[13px] tracking-[.19em]';
       break;
     default:
       tag = 'h1';
