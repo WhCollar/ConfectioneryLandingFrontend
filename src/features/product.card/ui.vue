@@ -1,10 +1,10 @@
 <script setup lang="ts">
 import { computed } from 'vue';
 import { useCartStore } from 'entities/cart';
+import { ProductsResponse } from 'entities/queries';
 import { TypographyLink, TypographyText } from 'shared/ui/typography';
-import { ProductCardProps } from './model';
 
-const props = defineProps<ProductCardProps>();
+const props = defineProps<ProductsResponse>();
 
 const cartStore = useCartStore();
 const isAddedToCart = computed(() => cartStore.isAlreadyAddedToCart(props.id));
@@ -13,7 +13,7 @@ const isAddedToCart = computed(() => cartStore.isAlreadyAddedToCart(props.id));
 <template>
   <div class="text-center">
     <div class="relative mb-[20px]">
-      <img class="w-full" :src="imgUrl" :alt="title" />
+      <img class="w-full" :src="images && images[0]" :alt="name" />
       <div
         class="absolute top-0 left-0 z-[150] w-full h-full bg-product-card-hover-placeholder opacity-0 transition-opacity duration-[.2s] ease-out hover:opacity-100"
       >
@@ -29,7 +29,7 @@ const isAddedToCart = computed(() => cartStore.isAlreadyAddedToCart(props.id));
     </div>
     <div>
       <TypographyLink class="font-semibold text-[18px]" hide-underline>
-        {{ title }}
+        {{ name }}
       </TypographyLink>
     </div>
     <div>

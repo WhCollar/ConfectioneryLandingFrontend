@@ -1,7 +1,7 @@
 <script setup lang="ts">
+import { CategoryProductSliceSection } from 'widgets/category.product.slice.section';
 import { MainCarousel } from 'widgets/main.carousel';
 import { MenuSection } from 'widgets/menu.section';
-import { ProductCategorySlice } from 'widgets/product.category.slice';
 import { ProductSetPrices } from 'widgets/product.set.prices';
 import { RequestFrom } from 'features/request.form';
 import { SectionWithIntroduction } from 'entities/structure';
@@ -56,17 +56,7 @@ import { TypographyTitleLabel } from 'shared/ui/typography';
         </div>
       </Parallax>
     </section>
-    <SectionWithIntroduction
-      :introduction-props="{
-        titleLabel: ' we know that ',
-        title: ' truffle is art ',
-        text: 'Lorem ipsum dolor sit amet, ea has tollit nominavi, ei ius choro affert graeco. Vim nulla epicuri defini bas et, eam in facer errem nominavi. ',
-      }"
-    >
-      <template #content>
-        <ProductCategorySlice />
-      </template>
-    </SectionWithIntroduction>
+    <CategoryProductSliceSection />
     <section class="w-full">
       <div>
         <MenuSection

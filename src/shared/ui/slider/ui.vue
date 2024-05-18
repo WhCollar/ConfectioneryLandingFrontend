@@ -2,16 +2,25 @@
 import Slider from '@vueform/slider';
 
 defineProps<{
+  value?: [number, number];
   min?: number;
   max?: number;
   step?: number | [number, number];
 }>();
 
-const value = defineModel('value');
+const emit = defineEmits<{
+  (e: 'update:value', value: [number, number]): void;
+}>();
 </script>
 
 <template>
-  <Slider v-model:value="value" :min="min" :max="max" :step="step" />
+  <Slider
+    :value="value"
+    :min="min"
+    :max="max"
+    :step="step"
+    @change="(value) => emit('update:value', value as any)"
+  />
 </template>
 
 <style>

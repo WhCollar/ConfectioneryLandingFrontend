@@ -13,10 +13,6 @@ const headerConfig: MenuItem[] = [
     routeName: RouterEnum.Main,
   },
   {
-    text: 'Портфолио',
-    routeName: RouterEnum.Portfolio,
-  },
-  {
     text: 'Каталог',
     routeName: RouterEnum.Catalog,
   },

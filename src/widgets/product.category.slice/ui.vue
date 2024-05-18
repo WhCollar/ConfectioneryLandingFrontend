@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import { ProductCard, ProductCardProps } from 'features/product.card';
+import { ProductCard } from 'features/product.card';
+import { ProductsResponse } from 'entities/queries';
 import {
   Truffle6,
   Truffle5,
@@ -9,46 +10,56 @@ import {
   Truffle1,
 } from 'shared/ui/images';
 
-const products: ProductCardProps[] = [
+defineProps<{
+  products?: ProductsResponse[];
+}>();
+
+const staticProducts: ProductsResponse[] = [
   {
-    id: 1,
-    imgUrl: Truffle1,
-    title: 'COCONUT TRUFFLE',
+    id: '1',
+    images: [Truffle1],
+    name: 'COCONUT TRUFFLE',
+    categoryIds: [],
     description: 'Chocobar, Cupcakes, Truffles',
     price: 10,
   },
   {
-    id: 2,
-    imgUrl: Truffle2,
-    title: 'PEANUT TRUFFLE',
+    id: '2',
+    images: [Truffle2],
+    name: 'PEANUT TRUFFLE',
+    categoryIds: [],
     description: 'Chocobar, Cupcakes, Truffles',
     price: 10,
   },
   {
-    id: 3,
-    imgUrl: Truffle3,
-    title: 'S’MORES TRUFFLE',
+    id: '3',
+    images: [Truffle3],
+    name: 'S’MORES TRUFFLE',
+    categoryIds: [],
     description: 'Chocobar, Cupcakes, Truffles',
     price: 10,
   },
   {
-    id: 4,
-    imgUrl: Truffle4,
-    title: 'ALMOND TRUFFLE',
+    id: '4',
+    images: [Truffle4],
+    name: 'ALMOND TRUFFLE',
+    categoryIds: [],
     description: 'Chocobar, Cupcakes, Truffles',
     price: 10,
   },
   {
-    id: 5,
-    imgUrl: Truffle5,
-    title: 'CINNAMON TRUFFLE',
+    id: '5',
+    images: [Truffle5],
+    name: 'CINNAMON TRUFFLE',
+    categoryIds: [],
     description: 'Chocobar, Cupcakes, Truffles',
     price: 10,
   },
   {
-    id: 6,
-    imgUrl: Truffle6,
-    title: 'SEA SALT TRUFFLE',
+    id: '6',
+    images: [Truffle6],
+    name: 'SEA SALT TRUFFLE',
+    categoryIds: [],
     description: 'Chocobar, Cupcakes, Truffles',
     price: 10,
   },

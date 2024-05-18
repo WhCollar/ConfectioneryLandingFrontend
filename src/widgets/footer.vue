@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { useContactInfoGet } from 'entities/queries';
 import { Divider } from 'shared/ui/divider';
 import {
   Facebook,
@@ -16,19 +17,7 @@ import {
 } from 'shared/ui/typography';
 import { Container } from 'shared/ui/utils';
 
-const address = 'Heinrichstrasse 267c / 3. Stock 8005 Zürich';
-const addressHref = '';
-const email = 'dolcino@qodeinteractive.com';
-const emailHref = '';
-const phone = '+88(0) 101 0000 000';
-const phoneHref = '';
-
-const titleLabel = ' eat what you love ';
-const title = ' Dolcino pastries ';
-const text =
-  ' 1926. - Year of beggining. There are many variations of passa ges of Lorem Ipsum avai lable, but the majority suffered alter. ';
-
-const mapPointLink = '';
+const { data } = useContactInfoGet();
 </script>
 
 <template>
@@ -42,24 +31,36 @@ const mapPointLink = '';
             <TypographyTitle :level="5" class="text-white mb-[21px]">
               Contact
             </TypographyTitle>
-            <template v-if="address">
-              <TypographyText type="link" class="text-gray" :href="addressHref">
-                {{ address }}
+            <template v-if="data?.address">
+              <TypographyText
+                type="link"
+                class="text-gray"
+                :href="data?.mapLink"
+              >
+                {{ data?.address }}
               </TypographyText>
             </template>
-            <template v-if="email">
+            <template v-if="data?.email">
               <TypographyText type="regular" class="text-gray mb-0">
                 Email:
-                <TypographyText type="link" class="text-gray" :href="emailHref">
-                  {{ email }}
+                <TypographyText
+                  type="link"
+                  class="text-gray"
+                  :href="`mailto:${data?.email}`"
+                >
+                  {{ data?.email }}
                 </TypographyText>
               </TypographyText>
             </template>
-            <template v-if="phone">
+            <template v-if="data?.phone">
               <TypographyText type="regular" class="text-gray mb-0">
                 Phone:
-                <TypographyText type="link" class="text-gray" :href="phoneHref">
-                  {{ phone }}
+                <TypographyText
+                  type="link"
+                  class="text-gray"
+                  :href="`tel:${data?.phone}`"
+                >
+                  {{ data?.phone }}
                 </TypographyText>
               </TypographyText>
             </template>
@@ -69,39 +70,49 @@ const mapPointLink = '';
           <div class="w-full">
             <div class="w-full text-center">
               <div class="w-full mb-[45px]">
-                <template v-if="titleLabel">
+                <template v-if="data?.titleLabel">
                   <TypographyTitleLabel class="text-[30px]">{{
-                    titleLabel
+                    data?.titleLabel
                   }}</TypographyTitleLabel>
                 </template>
-                <template v-if="title">
+                <template v-if="data?.title">
                   <TypographyTitle :level="4" class="text-white">{{
-                    title
+                    data.title
                   }}</TypographyTitle>
                 </template>
-                <template v-if="text">
+                <template v-if="data?.text">
                   <Divider />
                   <TypographyText type="regular" class="text-gray">
-                    {{ text }}
+                    {{ data?.text }}
                   </TypographyText>
                 </template>
               </div>
             </div>
             <SocialLinksGroup>
-              <Facebook class="mr-[24px]" />
-              <Twitter class="mr-[24px]" />
-              <Instagram />
+              <template v-if="data?.facebookLink">
+                <Facebook class="mr-[24px]" :href="data?.facebookLink" />
+              </template>
+              <template v-if="data?.twitterLink">
+                <Twitter class="mr-[24px]" :href="data?.twitterLink" />
+              </template>
+              <template v-if="data?.instagramLink">
+                <Instagram :href="data?.instagramLink" />
+              </template>
             </SocialLinksGroup>
             <SocialLinksGroup>
-              <Linkedin class="mr-[24px]" />
-              <Pinterest />
+              <template v-if="data?.linkedInLink">
+                <Linkedin class="mr-[24px]" :href="data?.linkedInLink" />
+              </template>
+              <template v-if="data?.pinterestLink">
+                <Pinterest :href="data?.pinterestLink" />
+              </template>
             </SocialLinksGroup>
           </div>
         </div>
         <div
           class="flex h-full w-full items-center justify-center lg:justify-end"
         >
-          <a class="cursor-pointer" :href="mapPointLink">
+          <a class="cursor-pointer" :href="data?.mapLink">
             <img :src="ShokuninWorldMap" alt="Map" />
           </a>
         </div>

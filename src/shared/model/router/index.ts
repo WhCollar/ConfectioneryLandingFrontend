@@ -2,7 +2,6 @@
   Main: 'Main',
   ContactUs: 'ContactUs',
   Cart: 'Cart',
-  Portfolio: 'Portfolio',
   Catalog: 'Catalog',
   Product: 'Product',
   CreateOrder: 'CreateOrder',
