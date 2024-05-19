@@ -53,11 +53,11 @@ const products: ProductCardProps[] = [
     class="h-[300px] bg-fixed bg-[50%_0] bg-no-repeat gap-[20px]"
     :style="{ backgroundImage: `url('${ShotTitle}')` }"
   >
-    <Container class="h-full flex flex-col justify-center">
+    <Container class="h-full flex flex-col justify-center px-[30px]">
       <TypographyTitle :level="2"> Каталог </TypographyTitle>
     </Container>
   </section>
-  <Container class="my-[70px]">
+  <Container class="my-[70px] px-[30px]">
     <div class="pb-[30px]">
       <TypographyText> Найдено: {{ products.length }} </TypographyText>
     </div>

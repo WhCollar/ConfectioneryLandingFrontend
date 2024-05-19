@@ -19,13 +19,13 @@ const currentTab = ref(0);
     class="h-[300px] bg-fixed bg-[50%_0] bg-no-repeat gap-[20px]"
     :style="{ backgroundImage: `url('${ShotTitle}')` }"
   >
-    <Container class="h-full flex flex-col justify-center">
+    <Container class="h-full flex flex-col justify-center px-[30px]">
       <TypographyTitle :level="2"> Магазин </TypographyTitle>
     </Container>
   </section>
   <section class="py-[70px]">
-    <Container>
-      <div class="w-full grid grid-cols-2">
+    <Container class="px-[15px]">
+      <div class="w-full grid grid-cols-1 lg:grid-cols-2 gap-[20px]">
         <div class="w-full">
           <img :src="data?.images && data?.images[0]" :alt="data?.name" />
         </div>
@@ -53,8 +53,8 @@ const currentTab = ref(0);
     </Container>
   </section>
   <section class="py-[70px]">
-    <Container>
-      <div class="flex mb-[30px]">
+    <Container class="px-[15px]">
+      <div class="md:flex mb-[30px]">
         <div
           class="cursor-pointer py-[10px] pr-[30px] border-gray border-b hover:text-primary hover:border-primary"
           :class="{ ['border-primary']: currentTab == 0 }"

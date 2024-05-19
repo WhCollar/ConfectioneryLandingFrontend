@@ -1,65 +1,87 @@
 <script setup lang="ts">
+import { useRouter } from 'vue-router';
 import { Carousel, Navigation, Pagination, Slide } from 'vue3-carousel';
+import {
+  CarouselItemResponse,
+  useMainPageCarouselItems,
+} from 'entities/queries';
 import { Introduction } from 'entities/structure';
+import { RouterEnum } from '@/shared/model/router';
 import { GhostButton, PrimaryButton } from 'shared/ui/buttons';
 import { H1Slide1, H1Slide2, H1Slide3, H1Slide4 } from 'shared/ui/images';
-import { CarouselProduct } from './model';
 
-const sliderItems: CarouselProduct[] = [
+const router = useRouter();
+
+const { data } = useMainPageCarouselItems();
+
+const sliderItems: CarouselItemResponse[] = [
   {
-    imgSrc: H1Slide1,
-    titleLabel: 'Sweet bites for you',
+    image: H1Slide1,
+    secondTitle: 'Sweet bites for you',
     title: 'tasteful',
-    text: 'It’s always good time for sweets! Made with care and prepared with love, our sweets are all you might need to make every day special. Find your favorite now.',
-    productId: 0,
+    description:
+      'It’s always good time for sweets! Made with care and prepared with love, our sweets are all you might need to make every day special. Find your favorite now.',
+    productId: '0',
   },
   {
-    imgSrc: H1Slide2,
-    titleLabel: '',
+    image: H1Slide2,
+    secondTitle: '',
     title: '',
-    text: '',
-    productId: 1,
+    description: '',
+    productId: '1',
   },
   {
-    imgSrc: H1Slide3,
-    titleLabel: '',
+    image: H1Slide3,
+    secondTitle: '',
     title: '',
-    text: '',
-    productId: 2,
+    description: '',
+    productId: '2',
   },
   {
-    imgSrc: H1Slide4,
-    titleLabel: '',
+    image: H1Slide4,
+    secondTitle: '',
     title: '',
-    text: '',
-    productId: 4,
+    description: '',
+    productId: '4',
   },
 ];
 </script>
 
 <template>
   <Carousel class="pb-[50px]" wrap-around>
-    <Slide v-for="(slide, index) in sliderItems" :key="index">
+    <Slide v-for="(slide, index) in data" :key="index">
       <div
         class="h-[100vh] w-[100vw] bg-left-top bg-no-repeat bg-cover"
-        :style="{ backgroundImage: `url('${slide.imgSrc}')` }"
+        :style="{ backgroundImage: `url('${slide.image}')` }"
       >
         <div class="h-full grid grid-cols-1 lg:grid-cols-2">
           <div class="hidden lg:block"></div>
           <div class="flex justify-center lg:justify-start items-center">
             <div class="w-[500px] lg:w-[780px]">
               <Introduction
-                :title-label="slide.titleLabel"
+                :title-label="slide.secondTitle"
                 :title="slide.title"
-                :text="slide.text"
-                :text-class="'hidden lg:block'"
+                :description="slide.description"
+                :description-class="'hidden lg:block'"
               />
               <div class="h-[20px]"></div>
               <div class="flex max-lg:flex-col justify-center items-center">
-                <PrimaryButton class="max-lg:mb-[20px] lg:mr-[20px]">
-                  Discover
+                <PrimaryButton
+                  class="max-lg:mb-[20px] lg:mr-[20px]"
+                  @click="router.push({ name: RouterEnum.Catalog })"
+                >
+                  Каталог
                 </PrimaryButton>
-                <GhostButton>Shop now</GhostButton>
+                <GhostButton
+                  @click="
+                    router.push({
+                      name: RouterEnum.Catalog,
+                      params: { id: slide.productId },
+                    })
+                  "
+                >
+                  Заказать
+                </GhostButton>
               </div>
             </div>
           </div>

@@ -152,6 +152,14 @@ export interface CategorySectionResponse {
   products: ProductsResponse;
 }
 
+export interface CarouselItemResponse {
+  title: string;
+  secondTitle: string;
+  description: string;
+  image: string;
+  productId: string;
+}
+
 export const useMainPageCategorySection = () =>
   useQuery({
     queryKey: ['main-page-info/category-section'],
@@ -163,6 +171,20 @@ export const useMainPageCategorySection = () =>
       data.products = setProductResponseMediaUrl(data.products) as any;
       return data;
     },
+  });
+
+export const useMainPageCarouselItems = () =>
+  useQuery({
+    queryKey: ['main-page-info/carousel-items'],
+    queryFn: () =>
+      axiosInstance.get<CarouselItemResponse[]>(
+        'main-page-info/carousel-items',
+      ),
+    select: ({ data }) =>
+      data?.map((item) => {
+        item.image = VITE_BASE_MEDIA_URL + item.image;
+        return item;
+      }),
   });
 
 // Order feature

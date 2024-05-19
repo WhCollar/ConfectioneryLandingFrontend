@@ -1,11 +1,14 @@
 <script setup lang="ts">
 import { computed } from 'vue';
+import { useRouter } from 'vue-router';
 import { useCartStore } from 'entities/cart';
 import { ProductsResponse } from 'entities/queries';
+import { RouterEnum } from '@/shared/model/router';
 import { TypographyLink, TypographyText } from 'shared/ui/typography';
 
 const props = defineProps<ProductsResponse>();
 
+const router = useRouter();
 const cartStore = useCartStore();
 const isAddedToCart = computed(() => cartStore.isAlreadyAddedToCart(props.id));
 </script>
@@ -28,7 +31,11 @@ const isAddedToCart = computed(() => cartStore.isAlreadyAddedToCart(props.id));
       </div>
     </div>
     <div>
-      <TypographyLink class="font-semibold text-[18px]" hide-underline>
+      <TypographyLink
+        class="font-semibold text-[18px]"
+        hide-underline
+        @click="router.push({ name: RouterEnum.Product, params: { id } })"
+      >
         {{ name }}
       </TypographyLink>
     </div>
