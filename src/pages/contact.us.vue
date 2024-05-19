@@ -1,9 +1,12 @@
 <script setup lang="ts">
+import { useContactInfoGet } from 'entities/queries';
 import { Divider } from 'shared/ui/divider';
 import { ShotTitle } from 'shared/ui/images';
 import { TextDelimiterDots } from 'shared/ui/text.delimiter.dots';
 import { TypographyTitle, TypographyText } from 'shared/ui/typography';
 import { Container } from 'shared/ui/utils';
+
+const { data } = useContactInfoGet();
 
 const workSchedule: { weekDay: string; timespan: string }[] = [
   {
@@ -72,13 +75,10 @@ const workSchedule: { weekDay: string; timespan: string }[] = [
         </div>
         <div class="w-full lg:w-[67%] px-[15px]">
           <div class="mb-[30px]">
-            <TypographyTitle :level="3"> WE ARE OPEN </TypographyTitle>
+            <TypographyTitle :level="3"> Мы открыты </TypographyTitle>
             <Divider divider-start marker-start />
             <TypographyText>
-              Lorem ipsum dolor sit amet, ne nulla quidam causae qui, dicam
-              mandamus est ad. Qui officiis gloriatur id. Vivendo verterem
-              definitionem id nam, altera nostrud quaestio has ut, ea facilis
-              ocurreret per. Euripidis pertinacia ullamcorper ne ius, has tale.
+              {{ data?.contactPageText }}
             </TypographyText>
           </div>
           <div class="grid grid-cols-1 lg:grid-cols-2 text-primary text-[26px]">
@@ -86,29 +86,31 @@ const workSchedule: { weekDay: string; timespan: string }[] = [
               <span class="flex items-center">
                 <span class="icon_house mr-[5px]"></span>
                 <TypographyText type="link">
-                  Friedrichstrase 123, 10117 Berlin
+                  {{ data?.address }}
                 </TypographyText>
               </span>
             </div>
             <div class="max-lg:mb-[15px]">
               <span class="flex items-center">
                 <span class="icon_mail mr-[5px]"></span>
-                <TypographyText type="link">
-                  dolcino@qodeinteractive.com
+                <TypographyText type="link" :href="`mailto:${data?.email}`">
+                  {{ data?.email }}
                 </TypographyText>
               </span>
             </div>
             <div class="max-lg:mb-[15px]">
               <span class="flex items-center">
                 <span class="icon_phone mr-[5px]"></span>
-                <TypographyText type="link"> 99411 - 7253931 </TypographyText>
+                <TypographyText type="link" :href="`tel:${data?.phone}`">
+                  {{ data?.phone }}
+                </TypographyText>
               </span>
             </div>
             <div class="max-lg:mb-[15px]">
               <span class="flex items-center">
                 <span class="icon_laptop mr-[5px]"></span>
-                <TypographyText type="link">
-                  dolcino@qodeinteractive.com
+                <TypographyText type="link" :href="`mailto:${data?.email}`">
+                  {{ data?.email }}
                 </TypographyText>
               </span>
             </div>

@@ -61,7 +61,7 @@ const sliderItems: CarouselItemResponse[] = [
               <Introduction
                 :title-label="slide.secondTitle"
                 :title="slide.title"
-                :description="slide.description"
+                :text="slide.description"
                 :description-class="'hidden lg:block'"
               />
               <div class="h-[20px]"></div>

@@ -1,4 +1,4 @@
-import { useMutation, useQuery } from '@tanstack/vue-query';
+import { useMutation, useQuery, useQueryClient } from '@tanstack/vue-query';
 import { Ref } from 'vue';
 import { axiosInstance } from 'shared/model/client.instance';
 import { VITE_BASE_MEDIA_URL } from 'shared/model/env';
@@ -82,40 +82,45 @@ export const useProductGet = (ProductId: RefValueUndefined<string>) =>
 
 // Comment feature
 interface CreateCommentCommand {
-  FirstName: string;
-  SecondName: string;
-  Email: string;
-  Text: string;
+  firstName: string;
+  secondName: string;
+  email: string;
+  text: string;
 }
 
 interface CommentResponse {
-  ContentItemId: string;
-  FirstName: string;
-  SecondName: string;
-  Email: string;
-  Text: string;
-  CreatedAt: Date;
+  contentItemId: string;
+  firstName: string;
+  secondName: string;
+  email: string;
+  text: string;
+  createdAt: Date;
 }
 
+const CommentByProductQueryKey = 'comments/{productId}';
 export const useCommentByProductGet = (ProductId: RefValueUndefined<string>) =>
   useQuery({
-    queryKey: ['comments/{productId}'],
+    queryKey: [CommentByProductQueryKey],
     queryFn: () =>
       axiosInstance.get<CommentResponse[]>(`comments/${ProductId.value}`),
     enabled: () => !!ProductId.value,
     select: ({ data }) => data,
   });
-export const useCommentCreate = () =>
-  useMutation({
+export const useCommentCreate = () => {
+  const qc = useQueryClient();
+  return useMutation({
     mutationKey: ['comments/{productId}'],
     mutationFn: ({
-      projectId,
+      productId,
       command,
     }: {
-      projectId: string;
+      productId: string;
       command: CreateCommentCommand;
-    }) => axiosInstance.post<CommentResponse>(`comments/${projectId}`, command),
+    }) => axiosInstance.post<CommentResponse>(`comments/${productId}`, command),
+    onSettled: () =>
+      qc.invalidateQueries({ queryKey: [CommentByProductQueryKey] }),
   });
+};
 
 // Contact info feature
 interface ContactInfoResponse {
@@ -126,6 +131,7 @@ interface ContactInfoResponse {
   titleLabel: string;
   title: string;
   text: string;
+  contactPageText: string;
   mapLink: string;
 
   facebookLink: string;

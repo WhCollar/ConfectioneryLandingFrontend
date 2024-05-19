@@ -29,7 +29,7 @@ const { data } = useContactInfoGet();
         >
           <div>
             <TypographyTitle :level="5" class="text-white mb-[21px]">
-              Contact
+              Контакты
             </TypographyTitle>
             <template v-if="data?.address">
               <TypographyText
