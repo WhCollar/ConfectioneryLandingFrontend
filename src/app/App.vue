@@ -1,12 +1,9 @@
 <script setup lang="ts">
-import Footer from 'widgets/footer.vue';
-import Header from 'widgets/header.vue';
+import { Routing } from 'pages';
 </script>
 
 <template>
-  <Header />
-  <RouterView />
-  <Footer />
+  <Routing />
 </template>
 
 <style>

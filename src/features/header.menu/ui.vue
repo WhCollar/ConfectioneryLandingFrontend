@@ -2,6 +2,7 @@
 import { ref, watch } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
 import { HeaderCart } from 'entities/cart';
+import { useContactInfoGet } from 'entities/queries';
 import { Introduction } from 'entities/structure';
 import { Drawer } from 'shared/ui/drawer';
 import {
@@ -23,6 +24,7 @@ defineProps<{
 
 const router = useRouter();
 const route = useRoute();
+const { data } = useContactInfoGet();
 
 const desktopDrawer = ref(false);
 const mobileDrawer = ref(false);
@@ -56,11 +58,13 @@ watch(
         </ul>
       </nav>
       <a
+        v-show="false"
         class="relative align-middle inline-block text-[15px] leading-[1] mx-[20px] cursor-pointer"
       >
         <SearchIcon />
       </a>
       <div
+        v-show="false"
         class="relative align-middle inline-block text-[15px] leading-[1] mr-[32px] ml-[12px] cursor-pointer"
       >
         <HeaderCart />
@@ -82,11 +86,30 @@ watch(
               />
               <div class="h-[20px]"></div>
               <SocialLinksGroup>
-                <Facebook class="mr-[24px]" />
-                <Twitter class="mr-[24px]" />
-                <Instagram class="mr-[24px]" />
-                <Linkedin class="mr-[24px]" />
-                <Pinterest />
+                <Facebook
+                  v-if="data?.facebookLink"
+                  class="mr-[24px]"
+                  :href="data?.facebookLink"
+                />
+                <Twitter
+                  v-if="data?.twitterLink"
+                  class="mr-[24px]"
+                  :href="data?.twitterLink"
+                />
+                <Instagram
+                  v-if="data?.instagramLink"
+                  class="mr-[24px]"
+                  :href="data?.instagramLink"
+                />
+                <Linkedin
+                  v-if="data?.linkedInLink"
+                  class="mr-[24px]"
+                  :href="data?.linkedInLink"
+                />
+                <Pinterest
+                  v-if="data?.pinterestLink"
+                  :href="data?.pinterestLink"
+                />
               </SocialLinksGroup>
             </div>
           </div>

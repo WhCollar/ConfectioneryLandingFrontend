@@ -39,7 +39,9 @@ const currentTab = ref(0);
             <TypographyTitle :level="3">
               {{ product?.name }}
             </TypographyTitle>
-            <TypographyText> ₽{{ product?.price }} </TypographyText>
+            <TypographyText class="text-[32px]">
+              ₽{{ product?.price }}
+            </TypographyText>
           </div>
           <div class="mb-[30px]">
             <TypographyText>
@@ -130,20 +132,20 @@ const currentTab = ref(0);
           </div>
         </template>
         <template v-else-if="currentTab == 2">
-          <div>Комментарии</div>
-          <CreateCommentForm :product-id="id" />
+          <div class="mb-[30px]">
+            <CreateCommentForm :product-id="id" />
+          </div>
           <div>
             <template v-for="(comment, index) in comments" :key="index">
-              {{ comment }}
-              <div>
-                <span class="mb-[20px]">
-                  <TypographyTitle :level="5">
-                    {{ `${comment?.firstName} ${comment?.secondName}` }}
+              <div class="border-b border-gray p-[15px]">
+                <div class="flex items-center mb-[20px]">
+                  <TypographyTitle class="mr-[20px]" :level="5">
+                    {{ `${comment?.firstName} ${comment?.secondName} ` }}
                   </TypographyTitle>
                   <TypographyText>
-                    {{ comment?.createdAt }}
+                    {{ new Date(comment?.createdAt).toDateString() }}
                   </TypographyText>
-                </span>
+                </div>
                 <TypographyText>
                   {{ comment?.text }}
                 </TypographyText>
