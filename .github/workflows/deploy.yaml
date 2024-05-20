@@ -31,6 +31,6 @@ jobs:
           key: ${{ secrets.SSH_KEY }}
           script: |
             cd ${{ github.event.repository.name }}
-            docker stop $(docker ps -a -q) 2> /dev/null || true
+            docker-compose stop 2> /dev/null || true
             docker-compose build
             docker-compose up -d
