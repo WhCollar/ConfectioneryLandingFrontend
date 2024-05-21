@@ -32,7 +32,7 @@ import { TypographyTitleLabel } from 'shared/ui/typography';
       class="bg-center"
       :style="{ backgroundImage: `url('${H1Parallax_1_1}')` }"
       :introduction-props="{
-        titleLabel: 'we know that',
+        titleLabel: 'мы знаем это',
         title: 'Main page',
         text:
           'Lorem ipsum dolor sit amet, ea has tollit nominavi, ei ius choro\n' +
@@ -50,8 +50,8 @@ import { TypographyTitleLabel } from 'shared/ui/typography';
       <Parallax :imageUrl="H1Parallax_2_1">
         <div class="py-[156px] text-center">
           <TypographyTitleLabel class="text-[90px] leading-[100px]">
-            If there's no chocolate in Heaven, <br />
-            I'm not going.
+            Если на Небесах нет шоколада, <br />
+            Я не иду.
           </TypographyTitleLabel>
         </div>
       </Parallax>
@@ -90,9 +90,9 @@ import { TypographyTitleLabel } from 'shared/ui/typography';
     <SectionWithIntroduction
       :style="{ backgroundImage: `url('${H1Parallax_3}')` }"
       :introduction-props="{
-        titleLabel: 'enjoy each bite ',
-        title: 'OUR PRICES',
-        text: 'Lorem ipsum dolor sit amet, ea has tollit nominavi, ei ius choro affert graeco. Vim nulla epicuri defini bas et, eam in facer errem nominavi.',
+        titleLabel: 'наслаждайся каждым кусочком',
+        title: 'НАШИ ЦЕНЫ',
+        text: 'Наши наборы созданы с любовью и вниманием к деталям, чтобы подарить вам и вашим близким радость и наслаждение. В каждом наборе вы найдете разнообразие изысканных лакомств, приготовленных из лучших ингредиентов.',
       }"
     >
       <template #content>
@@ -148,9 +148,9 @@ import { TypographyTitleLabel } from 'shared/ui/typography';
     <SectionWithIntroduction
       :style="{ backgroundImage: `url('${H1Parallax_6_1}')` }"
       :introduction-props="{
-        titleLabel: 'come or leave a note',
-        title: 'WE ARE SOCIAL',
-        text: 'Lorem ipsum dolor sit amet, ea has tollit nominavi, ei ius choro affert graeco. Vim nulla epicuri defini bas et, eam in facer errem nominavi.',
+        titleLabel: 'приди или оставь записку',
+        title: 'МЫ РАДЫ ОБЩАТЬСЯ',
+        text: 'Мы всегда рады услышать ваше мнение и предложения! Пожалуйста, заполните форму ниже, и мы свяжемся с вами в ближайшее время.',
       }"
     >
       <template #content>
