@@ -44,7 +44,7 @@ defineProps<ProductSetCardProps>();
           </ul>
         </li>
         <li class="pt-[28px] pb-[51px] px-[15px]">
-          <TypographyLink active> Read more </TypographyLink>
+          <TypographyLink active> Подробнее </TypographyLink>
         </li>
       </ul>
     </div>
