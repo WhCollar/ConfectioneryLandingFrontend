@@ -41,7 +41,7 @@ const isAddedToCart = computed(() => cartStore.isAlreadyAddedToCart(props.id));
     </div>
     <div>
       <TypographyText class="text-[24px] leading-[1.4em]">
-        {{ description }}
+        {{ kilocalorie }} ккал.
       </TypographyText>
     </div>
     <div>

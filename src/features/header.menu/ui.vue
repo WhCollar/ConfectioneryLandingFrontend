@@ -80,9 +80,9 @@ watch(
           <div class="h-full flex items-center justify-center">
             <div>
               <Introduction
-                title-label=" Masterpiece of "
-                title=" tres doux "
-                text="There are many variations of passages of Lorem. Ipsum available, but the majority. "
+                title-label="Шедевр"
+                title="Вметсе"
+                text="Следите за нашими новинками и акциями! Подписывайтесь на нас в соцсетях и наслаждайтесь сладкими моментами вместе с нами!"
               />
               <div class="h-[20px]"></div>
               <SocialLinksGroup>
