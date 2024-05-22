@@ -33,11 +33,8 @@ import { TypographyTitleLabel } from 'shared/ui/typography';
       :style="{ backgroundImage: `url('${H1Parallax_1_1}')` }"
       :introduction-props="{
         titleLabel: 'мы знаем это',
-        title: 'Main page',
-        text:
-          'Lorem ipsum dolor sit amet, ea has tollit nominavi, ei ius choro\n' +
-          '          affert graeco. Vim nulla epicuri defini bas et, eam in facer errem\n' +
-          '          nominavi.',
+        title: 'ДЕЛО В ЛЮДЯХ',
+        text: 'Спасибо, что выбрали нашу кондитерскую; наслаждайтесь нашими сладостями, приготовленными с любовью и вниманием к деталям, делитесь радостью с близкими и создавайте незабываемые моменты вместе с нашими изысканными лакомствами!',
       }"
     >
       <template #content>
@@ -61,27 +58,31 @@ import { TypographyTitleLabel } from 'shared/ui/typography';
       <div>
         <MenuSection
           :image-url="H1Parallax_4"
-          title="A TRUE DELIGHT"
+          title="НАСТОЯЩЕЕ НАСЛАЖДЕНИЕ"
           :menu-items="[
             {
-              title: 'COCONUT TRUFFLE',
-              composition: 'Cream, cockies, biscuites, hazelnut',
-              price: 9,
+              title: 'КОКОСОВЫЙ ТРЮФЕЛЬ',
+              composition:
+                'Белый шоколад, сливки, кокосовая стружка, сливочное масло, сахарная пудра, ванильный экстракт, кокосовое масло',
+              price: 300,
             },
             {
-              title: 'ALMOND CUBE',
-              composition: 'Almond, cockies, biscuites, cream',
-              price: 12,
+              title: 'МИНДАЛЬНЫЙ КУБИК',
+              composition:
+                'Миндальная мука, сахар, яйца, сливочное масло, белый шоколад, сливки, миндальные лепестки, ванильный экстракт, разрыхлитель, соль',
+              price: 2100,
             },
             {
-              title: 'WHISKEY CREAM CAKE',
-              composition: 'Whiskey, cream, cockies, biscuites',
-              price: 26,
+              title: 'ТОРТ С ВИСКИ-КРЕМОМ',
+              composition:
+                'Мука пшеничная, сахар, яйца, разрыхлитель, ванильный экстракт, сливки, сахарная пудра, сливочное масло, виски, вода, шоколадная глазурь, шоколадные крошки, карамелизированные орехи.',
+              price: 1550,
             },
             {
-              title: 'CRÈME BRÛLÉE',
-              composition: 'Caramel, cream, cockies, almond',
-              price: 11,
+              title: 'КРЕМ-БРЮЛЕ',
+              composition:
+                'Сливки, молоко, сахар, яичные желтки, ванильный стручок, сахар для карамелизации',
+              price: 1850,
             },
           ]"
         />
