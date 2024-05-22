@@ -4,45 +4,28 @@ import { ProductSetCard, ProductSetCardProps } from 'entities/product.set.card';
 const sets: ProductSetCardProps[] = [
   {
     id: 0,
-    title: 'standard',
+    title: 'Стандартный',
     price: 119,
-    composition: [
-      'Lorem ipsum dolor sit amet',
-      'Contrary to popular beli',
-      'Lorem ipsum dolor sit amet',
-    ],
+    composition: ['Шоколадный торт', 'Яблочный пирог', 'Морковный кекс'],
   },
   {
     id: 1,
-    title: 'hot new',
+    title: 'Горячие новинки',
     price: 179,
-    composition: [
-      'Lorem ipsum dolor sit amet',
-      'Contrary to popular beli',
-      'Lorem ipsum dolor sit amet',
-      'Dolor sit ipsum lorem',
-    ],
+    composition: ['Торт с виски-кремом', 'Матча чизкейк', 'Лаванда и лимон'],
     active: true,
   },
   {
     id: 2,
-    title: 'delights',
+    title: 'Удовольствие',
     price: 219,
-    composition: [
-      'Lorem ipsum dolor sit amet',
-      'Contrary to popular beli',
-      'Lorem ipsum dolor sit amet',
-    ],
+    composition: ['Кокосовый трюфель', 'Малиновый мусс', 'Фисташковый макарон'],
   },
   {
     id: 3,
-    title: 'deluxe',
+    title: 'Особенный',
     price: 279,
-    composition: [
-      'Lorem ipsum dolor sit amet',
-      'Contrary to popular beli',
-      'Lorem ipsum dolor sit amet',
-    ],
+    composition: ['Тирамису', 'Павлова с ягодами', 'Шоколадный фондан'],
   },
 ];
 </script>
