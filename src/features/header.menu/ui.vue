@@ -64,7 +64,6 @@ watch(
         <SearchIcon />
       </a>
       <div
-        v-show="false"
         class="relative align-middle inline-block text-[15px] leading-[1] mr-[32px] ml-[12px] cursor-pointer"
       >
         <HeaderCart />
@@ -117,6 +116,11 @@ watch(
       </Drawer>
     </div>
     <div class="lg:hidden h-full flex items-center align-middle">
+      <div
+        class="relative align-middle inline-block text-[15px] leading-[1] mr-[32px] ml-[12px] cursor-pointer"
+      >
+        <HeaderCart />
+      </div>
       <a
         class="relative align-middle inline-block text-[15px] leading-[1] cursor-pointer"
         @click="mobileDrawer = true"

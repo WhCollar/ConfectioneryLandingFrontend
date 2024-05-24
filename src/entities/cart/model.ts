@@ -1,26 +1,83 @@
 import { defineStore } from 'pinia';
 import { computed, ref } from 'vue';
 
-type CartItemInfo = { count: number };
+type ICartItemData = { name: string; image?: string; price?: number };
 
-export const useCartStore = defineStore('cart', () => {
-  const cart = ref(new Map());
+type CartItem = {
+  count: number;
+  data: ICartItemData;
+};
 
-  const count = computed(() => cart.value.size);
+type ArrayCartItem = Omit<CartItem, 'data'> & ICartItemData & { id: string };
 
-  function isAlreadyAddedToCart(id: string) {}
+export const useCartStore = defineStore(
+  'cart',
+  () => {
+    const cart = ref<{ [key: string]: CartItem }>({});
 
-  function changeCount() {}
+    const count = computed(() => Object.keys(cart.value).length);
 
-  function add() {}
+    const asArray = computed(() => {
+      const items: ArrayCartItem[] = [];
+      Object.entries(cart.value).forEach(([key, value]) =>
+        items.push({
+          id: key,
+          ...value.data,
+          count: value.count,
+        }),
+      );
 
-  function remove() {}
+      return items;
+    });
 
-  return {
-    count,
-    isAlreadyAddedToCart,
-    add,
-    remove,
-    changeCount,
-  };
-});
+    const totalCost = computed(() => {
+      let cost = 0;
+
+      asArray.value.forEach((item) => {
+        if (!item.price) return;
+        cost += item.price * item.count;
+      });
+
+      return cost;
+    });
+
+    function isAlreadyAddedToCart(id: string) {
+      return !!cart.value[id];
+    }
+
+    function changeCount(id: string, count: number) {
+      const item = cart.value[id];
+
+      if (item) {
+        item.count = count;
+      }
+    }
+
+    function add(id: string, itemData: ICartItemData) {
+      cart.value[id] = { count: 1, data: itemData };
+    }
+
+    function remove(id: string) {
+      delete cart.value[id];
+    }
+
+    function clear() {
+      cart.value = {};
+    }
+
+    return {
+      cart,
+      count,
+      asArray,
+      totalCost,
+      isAlreadyAddedToCart,
+      add,
+      remove,
+      changeCount,
+      clear,
+    };
+  },
+  {
+    persist: true,
+  },
+);

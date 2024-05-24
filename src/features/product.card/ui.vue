@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed } from 'vue';
+import { ref } from 'vue';
 import { useRouter } from 'vue-router';
 import { useCartStore } from 'entities/cart';
 import { ProductsResponse } from 'entities/queries';
@@ -10,7 +10,17 @@ const props = defineProps<ProductsResponse>();
 
 const router = useRouter();
 const cartStore = useCartStore();
-const isAddedToCart = computed(() => cartStore.isAlreadyAddedToCart(props.id));
+const isAddedToCart = ref(cartStore.isAlreadyAddedToCart(props.id));
+
+const addToCart = () => {
+  cartStore.add(props.id, {
+    name: props.name,
+    image: props.images.at(0),
+    price: props.price,
+  });
+
+  isAddedToCart.value = true;
+};
 </script>
 
 <template>
@@ -22,10 +32,17 @@ const isAddedToCart = computed(() => cartStore.isAlreadyAddedToCart(props.id));
       >
         <div class="w-full h-full flex justify-center items-center">
           <template v-if="isAddedToCart">
-            <TypographyLink active>View cart</TypographyLink>
+            <TypographyLink
+              active
+              @click="router.push({ name: RouterEnum.Cart })"
+            >
+              Перейти в корзину
+            </TypographyLink>
           </template>
           <template v-else>
-            <TypographyLink active>Add to cart</TypographyLink>
+            <TypographyLink active @click="addToCart">
+              Добавить в корзину
+            </TypographyLink>
           </template>
         </div>
       </div>
