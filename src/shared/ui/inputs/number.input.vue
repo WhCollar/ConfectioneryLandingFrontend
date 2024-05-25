@@ -17,11 +17,13 @@ const value = computed({
     if (!newValue) return;
 
     if (props.min && newValue <= props.min) {
-      return emit('update:value', props.min);
+      emit('update:value', props.min);
+      return;
     }
 
     if (props.max && newValue >= props.max) {
-      return emit('update:value', props.max);
+      emit('update:value', props.max);
+      return;
     }
 
     emit('update:value', newValue);
@@ -83,5 +85,6 @@ const value = computed({
   @apply leading-[60px];
   @apply font-semibold;
   @apply text-center;
+  @apply font-montserrat;
 }
 </style>

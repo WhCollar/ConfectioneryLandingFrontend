@@ -42,14 +42,14 @@ const cartStore = useCartStore();
         </div>
       </template>
       <template v-else>
-        <table class="cart-table">
+        <table class="info-table">
           <thead>
             <tr>
-              <th class="product-remove"></th>
+              <th></th>
               <th class="hidden sm:block"></th>
-              <th class="product-name">Название</th>
+              <th>Название</th>
               <th class="hidden sm:block">Цена</th>
-              <th class="product-quantity">Количество</th>
+              <th>Количество</th>
             </tr>
           </thead>
           <tbody>
@@ -97,14 +97,10 @@ const cartStore = useCartStore();
                   >
                     {{ item.name }}
                   </TypographyText>
-                  <TypographyText class="block sm:hidden">
-                    ₽{{ item.price }}
-                  </TypographyText>
+                  <span class="block sm:hidden"> ₽{{ item.price }} </span>
                 </td>
 
-                <td class="hidden sm:table-cell">
-                  <TypographyText> ₽{{ item.price }} </TypographyText>
-                </td>
+                <td class="hidden sm:table-cell">₽{{ item.price }}</td>
 
                 <td>
                   <NumberInput
@@ -121,14 +117,9 @@ const cartStore = useCartStore();
           </tbody>
           <tfoot>
             <tr>
-              <td>
-                <TypographyText class="text-[24px]"> Итого: </TypographyText>
-              </td>
-              <td>
-                <TypographyText class="text-[24px]">
-                  ₽{{ cartStore.totalCost }}
-                </TypographyText>
-              </td>
+              <td></td>
+              <td>Итого:</td>
+              <td>₽{{ cartStore.totalCost }}</td>
             </tr>
           </tfoot>
         </table>
@@ -140,7 +131,7 @@ const cartStore = useCartStore();
   </section>
 </template>
 
-<style scoped lang="scss">
+<!--<style scoped lang="scss">
 .remove-button {
   @apply cursor-pointer;
 }
@@ -181,4 +172,4 @@ const cartStore = useCartStore();
   @apply text-[24px];
   @apply leading-[1.42em];
 }
-</style>
+</style>-->

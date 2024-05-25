@@ -194,14 +194,20 @@ export const useMainPageCarouselItems = () =>
   });
 
 // Order feature
+export interface ReceiptTypeResponse {
+  id: string;
+  name: string;
+}
+
 interface CreateOrderCommand {
-  FirstName: string;
-  SecondName: string;
-  Address: string;
-  Phone: string;
-  Email: string;
-  Notes: string;
-  ProductIds: string[];
+  firstName: string;
+  secondName: string;
+  receiptTypeId: string;
+  address?: string;
+  phone: string;
+  email?: string;
+  notes?: string;
+  productIds: string[];
 }
 
 export const useOrderCreate = () =>
@@ -209,6 +215,13 @@ export const useOrderCreate = () =>
     mutationKey: ['order'],
     mutationFn: ({ command }: { command: CreateOrderCommand }) =>
       axiosInstance.post('order', command),
+  });
+
+export const useReceiptTypes = () =>
+  useQuery({
+    queryKey: ['receipt-type'],
+    queryFn: () => axiosInstance.get<ReceiptTypeResponse[]>('receipt-type'),
+    select: ({ data }) => data,
   });
 
 // Request form

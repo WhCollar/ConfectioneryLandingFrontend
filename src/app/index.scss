@@ -2,3 +2,46 @@
 @import "./styles/fonts";
 @import "./styles/tailwind";
 @import "./styles/variables";
+
+.remove-button {
+  @apply cursor-pointer;
+}
+
+.info-table {
+  @apply w-full;
+  @apply align-middle;
+  @apply border-collapse;
+  @apply mb-[35px];
+  @apply font-cormorant;
+
+  tr {
+    @apply border-b;
+    @apply border-gray;
+  }
+
+  thead tr th {
+    @apply text-black;
+    @apply py-[10px];
+    @apply text-[18px];
+    @apply leading-[1.33em];
+    @apply font-medium;
+    @apply uppercase;
+    @apply tracking-[.06em];
+    @apply text-left;
+    @apply font-montserrat;
+  }
+
+  tbody tr td {
+    @apply py-[25px];
+    @apply align-middle;
+    @apply text-[24px];
+    @apply leading-[1.42em];
+  }
+
+  tfoot tr td {
+    @apply py-[25px];
+    @apply align-middle;
+    @apply text-[24px];
+    @apply leading-[1.42em];
+  }
+}
