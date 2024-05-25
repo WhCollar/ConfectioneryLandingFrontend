@@ -47,7 +47,7 @@ const onSubmit = handleSubmit((values) => {
   mutate({ command: request });
   resetForm();
   cartStore.clear();
-  router.push({ name: RouterEnum.Product });
+  router.push({ name: RouterEnum.Main });
 });
 </script>
 
