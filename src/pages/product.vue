@@ -1,19 +1,41 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue';
-import { useRoute } from 'vue-router';
+import { useRoute, useRouter } from 'vue-router';
 import { CreateCommentForm } from 'features/create.comment.form';
+import { useCartStore } from 'entities/cart';
 import { useCommentByProductGet, useProductGet } from 'entities/queries';
-import { SecondaryButton } from 'shared/ui/buttons';
+import { RouterEnum } from '@/shared/model/router';
+import { SecondaryButton, GhostButton } from 'shared/ui/buttons';
 import { ShotTitle } from 'shared/ui/images';
 import { TypographyTitle, TypographyText } from 'shared/ui/typography';
 import { Container } from 'shared/ui/utils';
 
+const router = useRouter();
 const route = useRoute();
 const id = computed(() => route.params.id.toString());
 const { data: product } = useProductGet(id);
 const { data: comments } = useCommentByProductGet(id);
 
 const currentTab = ref(0);
+
+const cartStore = useCartStore();
+const isAddedToCart = ref(false);
+const isInCart = computed(() =>
+  product.value ? cartStore.isAlreadyAddedToCart(product.value.id) : false,
+);
+
+const addToCart = () => {
+  const productValue = product.value;
+
+  if (!productValue) return;
+  cartStore.add(productValue.id, {
+    name: productValue.name,
+    image: productValue.images.at(0),
+    price: productValue.price,
+  });
+
+  isAddedToCart.value = true;
+};
 </script>
 
 <template>
@@ -49,7 +71,16 @@ const currentTab = ref(0);
             </TypographyText>
           </div>
           <div class="mb-[30px]">
-            <SecondaryButton> Добавить в корзину </SecondaryButton>
+            <template v-if="isAddedToCart || isInCart">
+              <GhostButton @click="router.push({ name: RouterEnum.Cart })">
+                Перейти в корзину
+              </GhostButton>
+            </template>
+            <template v-else>
+              <SecondaryButton @click="addToCart">
+                Добавить в корзину
+              </SecondaryButton>
+            </template>
           </div>
           <TypographyText>
             Килокалории: {{ product?.kilocalorie }}
